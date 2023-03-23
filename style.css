@@ -1,20 +1,115 @@
 :root {
     font-family: Arial, Helvetica, sans-serif;
 }
+/* button animation */
+input[type=checkbox] {
+    opacity: 0;
+    position:absolute;
+    left:-6900px;
+    top: -4200px;
+}
+input[type=checkbox] + label {
+    color: white;
+    display:flex;
+    align-items: center;
+    padding-top: 20px;
+    position: relative;
+    padding-bottom: 20px;
+    width:150px;
+}
+input[type=checkbox] + label::before {
+    /* margin-top: 20px; */
+    content: "";
+    background-color: rgb(61, 49, 118);
+    border: 3px solid white;
+    border-radius: 15px;
+    width: 60px;
+    height: 22px;
+    text-align: center;
+    cursor: pointer;
+    margin-right: 20px;
+    transition: 0.3s ease-in-out;
+}
+input[type=checkbox]:checked + label::before {
+    background-color: rgb(118, 49, 65);
+    /* width:175px; */
+}
+input[type=checkbox] + label::after {
+    position: absolute;
+    left: 4px;
+    content:"";
+    background-color: white;
+    width:20px;
+    height: 20px;
+    border-radius: 20px;
+    transition: 0.3s ease-in-out;
+}
+input[type=checkbox]:checked + label::after {
+    left: 41px;
+    background-color: white;
+    
+}
+/* hide all elements when screen is too small */
 @media screen and (max-width:299px) {
-    *{
-        visibility: hidden;
+    
+    * {
+        display: none;
     }
+    
 }
 /* mobile view */
 @media screen and (min-width:300px) and (max-width: 649px) {
     body {
-        background-color: #f2f2f2;
+        background-color: #383838;
+        display: flex;
+        flex-direction: column;
     }
     .main_title {
         font-size:20px;
         text-align:center;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        background-color: orange;
+        font-weight: 700;
+    }
+    .info, .day {
         margin-top: 20px;
+        margin-bottom: 20px;
+        color:white;
+        text-align: center;
+        font-size: 18px;
+    }
+    label {
+        margin: auto;
+    }
+    .loadMore, .loadPrev {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        width: 50%;
+        height: 40px;
+        margin: auto;
+    }
+    p {
+        font-size: 30px;
+        background-color: rgb(61, 49, 118);
+        padding-top: 15px;
+        padding-bottom: 15px;
+        color: white;
+        font-weight: 600;
+    }
+    .flights > div {
+        background-color: white;
+        margin: 20px 20px 20px 20px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        border-radius: 10px;
+        border-bottom: 5px solid black;
+
+    }
+    .flights > div > div {
+        text-align: center;
     }
 
 }
@@ -32,58 +127,9 @@
         text-align:center;
         margin-top: 20px;
         margin-bottom: 30px;
-        background: linear-gradient(to right, #6b3176, #f2f2f2);
+        background: linear-gradient(to right, rgb(61, 49, 118), #f2f2f2);
         padding-top: 30px;
         padding-bottom: 30px;
-    }
-
-    /* button animation */
-    input[type=checkbox] {
-        opacity: 0;
-        position:absolute;
-        left:-6900px;
-        top: -4200px;
-    }
-    input[type=checkbox] + label {
-        color: white;
-        display:flex;
-        align-items: center;
-        padding-top: 20px;
-        position: relative;
-        padding-bottom: 20px;
-        width:150px;
-    }
-    input[type=checkbox] + label::before {
-        /* margin-top: 20px; */
-        content: "";
-        background-color: rgb(61, 49, 118);
-        border: 3px solid white;
-        border-radius: 15px;
-        width: 60px;
-        height: 22px;
-        text-align: center;
-        cursor: pointer;
-        margin-right: 20px;
-        transition: 0.3s ease-in-out;
-    }
-    input[type=checkbox]:checked + label::before {
-        background-color: rgb(118, 49, 65);
-        /* width:175px; */
-    }
-    input[type=checkbox] + label::after {
-        position: absolute;
-        left: 4px;
-        content:"";
-        background-color: white;
-        width:20px;
-        height: 20px;
-        border-radius: 20px;
-        transition: 0.3s ease-in-out;
-    }
-    input[type=checkbox]:checked + label::after {
-        left: 41px;
-        background-color: white;
-
     }
 
     /* prompt below button */
@@ -93,8 +139,18 @@
         margin-bottom: 20px;
     }
 
-    .loadPrev, .loadMore {
+    label {
         margin: auto;
+    }
+    .loadMore, .loadPrev {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        width: 50%;
+        height: 40px;
+        margin: auto;
+    }
+    .loadMore {
+        margin-bottom: 50px;
     }
     /* body */
     .flights > div {
