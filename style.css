@@ -1,0 +1,140 @@
+:root {
+    font-family: Arial, Helvetica, sans-serif;
+}
+@media screen and (max-width:299px) {
+    *{
+        visibility: hidden;
+    }
+}
+/* mobile view */
+@media screen and (min-width:300px) and (max-width: 649px) {
+    body {
+        background-color: #f2f2f2;
+    }
+    .main_title {
+        font-size:20px;
+        text-align:center;
+        margin-top: 20px;
+    }
+
+}
+
+/* desktop view */
+@media screen and (min-width: 650px) {
+    body {
+        background-color: #383838;
+        color: white;
+        width:90%;
+        margin: auto;
+    }
+    .main_title {
+        font-size:30px;
+        text-align:center;
+        margin-top: 20px;
+        margin-bottom: 30px;
+        background: linear-gradient(to right, #6b3176, #f2f2f2);
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+
+    /* button animation */
+    input[type=checkbox] {
+        opacity: 0;
+        position:absolute;
+        left:-6900px;
+        top: -4200px;
+    }
+    input[type=checkbox] + label {
+        color: white;
+        display:flex;
+        align-items: center;
+        padding-top: 20px;
+        position: relative;
+        padding-bottom: 20px;
+        width:150px;
+    }
+    input[type=checkbox] + label::before {
+        /* margin-top: 20px; */
+        content: "";
+        background-color: rgb(61, 49, 118);
+        border: 3px solid white;
+        border-radius: 15px;
+        width: 60px;
+        height: 22px;
+        text-align: center;
+        cursor: pointer;
+        margin-right: 20px;
+        transition: 0.3s ease-in-out;
+    }
+    input[type=checkbox]:checked + label::before {
+        background-color: rgb(118, 49, 65);
+        /* width:175px; */
+    }
+    input[type=checkbox] + label::after {
+        position: absolute;
+        left: 4px;
+        content:"";
+        background-color: white;
+        width:20px;
+        height: 20px;
+        border-radius: 20px;
+        transition: 0.3s ease-in-out;
+    }
+    input[type=checkbox]:checked + label::after {
+        left: 41px;
+        background-color: white;
+
+    }
+
+    /* prompt below button */
+    .info {
+        width: 500px;
+        height: 20px;
+        margin-bottom: 20px;
+    }
+
+    .loadPrev, .loadMore {
+        margin: auto;
+    }
+    /* body */
+    .flights > div {
+        background-color: rgb(61, 49, 118);
+        margin: 20px 20px 20px 20px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        border-radius: 10px;
+        border-bottom: 5px solid black;
+        display:flex;
+        flex-direction:row;
+        align-items: center;
+    }
+    p {
+        font-size: min(70px, 2rem);
+        font-weight: 600;
+    }
+
+    .flights > div > div {
+        padding-top: 10px;
+        padding-bottom: 10px;
+        height: 175px;
+    }
+    .flights > div > div:nth-child(1) {
+        width: 20%;
+        border-right: 1px solid white;
+        padding-left: 10px;
+        
+    }
+    .flights > div > div:nth-child(2) {
+        width: 50%;
+        border-right: 1px solid white;
+        padding-left: 10px;
+    }
+    .flights > div > div:nth-child(2) > div:nth-child(1) {
+        padding-bottom: 50px;
+    }
+    .flights > div > div:nth-child(3) {
+        width: 30%;
+        border: none;
+        padding-left: 10px;
+    }
+}
